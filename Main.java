@@ -1,18 +1,25 @@
 public class Main {
     public static void main(String[] args) {
-        Pessoa pessoa = new Pessoa();
-        pessoa.setNome("Pedro");
-        pessoa.setAltura(1.90);
-        pessoa.setPeso(80);
-        pessoa.setcpf("11100011118");
-        System.out.println("IMC de pessoa " + pessoa.getNome() + ": " + pessoa.calcularIMC());
+        Frota frota = new Frota();
+        Carro carro = new Carro("gol","Quadrado",4,2020);
+        Caminhao caminhao = new Caminhao("volvo", "FH",2018,25.0f);
+        Motorista joao = new Motorista("João", "123456");
+        Motorista ricardo = new Motorista("Ricardo", "654321");
+            joao.atribuirVeiculo(carro);
+            ricardo.atribuirVeiculo(caminhao);
+
+            frota.adcionarVeiculo(carro);
+            frota.adcionarVeiculo(caminhao);
+            frota.adcionarMotorista(joao);
+            frota.adcionarMotorista(ricardo);
+
+            frota.listarFrota();
+            joao.dirigir();
+            ricardo.dirigir();
 
 
-        Produto produto = new Produto();
-        produto.setNome("celular");
-        produto.setPreco(1500);
-        produto.aplicarDesconto(0.2);
-        System.out.println("preço com desconto " + produto.getNome() + "R$ " + produto.getPreco());
+
+
 
     }
 }
